@@ -169,7 +169,7 @@ const getPsshBox = (request: T.PlayReadyDataEncodeConfig) => {
   const requestData: T.HeaderConfig = {
     systemId: tools.system.PLAYREADY.id,
     keyIds: request.keyPairs ? request.keyPairs.map((k) => k.kid) : [],
-    data: data
+    data
   }
   const psshHeader = tools.getPsshHeader(requestData)
   return psshHeader

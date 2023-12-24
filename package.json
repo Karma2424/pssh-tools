@@ -5,7 +5,7 @@
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
-    "build": "eslint **/*.ts && tsc -p . && cp -R ./src/lib/pssh/proto ./dist/src/lib/pssh/",
+    "build": "eslint **/*.ts --fix && tsc -p . && xcopy .\\src\\lib\\pssh\\proto .\\dist\\src\\lib\\pssh\\ /E /I",
     "prepare": "npm run build",
     "pretest": "npm run build",
     "test": "nyc ava",
