@@ -7,7 +7,7 @@ export interface WidevineEncodeConfig {
   provider?: string
   protectionScheme?: string
   trackType?: string
-  algorithm?: boolean
+  algorithm?: number
 }
 
 export type WidevineDataEncodeConfig = Omit<WidevineEncodeConfig, 'dataOnly'>
