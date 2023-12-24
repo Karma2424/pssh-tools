@@ -5,7 +5,7 @@ import * as T from '../types'
 import * as tools from './tools'
 
 interface WidevineProtoPayload {
-  algorithm: number,
+  algorithm?: number,
   keyId?: Buffer[],
   contentId?: Buffer,
   trackType?: string,
