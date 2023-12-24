@@ -18,11 +18,9 @@ const getPsshData = (request: T.WidevineDataEncodeConfig) => {
   const root = protobuf.loadSync(protoFile)
 
   const WidevineCencHeader = root.lookupType('proto.WidevineCencHeader')
-  const payload: WidevineProtoPayload = {
-    algorithm: 0
-  }
+  const payload: WidevineProtoPayload = {}
   if (request.algorithm) {
-    payload.algorithm = 1 // 0: Unencrypted - 1: AESCTR
+    payload.algorithm = request.algorithm // 0: Unencrypted - 1: AESCTR
   }
   if (request.keyIds && request.keyIds.length > 0) {
     const keyIdsBuffer = request.keyIds.map((key) => {
